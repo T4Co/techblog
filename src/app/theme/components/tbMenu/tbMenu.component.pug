@@ -1,0 +1,6 @@
+ul.nav
+  tb-menu-item.nav(
+    [menuItem]='item',
+    (itemHover)='hoverItem($event)',
+    (toggleSubMenu)='toggleSubMenu($event)',
+    *ngFor='let item of menuItems')
