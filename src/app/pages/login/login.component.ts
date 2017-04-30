@@ -1,14 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/index';
 
 @Component({
   selector: 'login',
-  encapsulation: ViewEncapsulation.None,
-  template: require('./login.component.pug')
+  encapsulation: ViewEncapsulation.Emulated,
+  templateUrl: './login.component.pug'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   private model: any = {};
   private loading: boolean = false;

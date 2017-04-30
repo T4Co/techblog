@@ -1,12 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'no-content',
-  template: `
-    <div>
-      <h1>404: page missing</h1>
-    </div>
-  `
+  encapsulation: ViewEncapsulation.Emulated,
+  templateUrl: './no-content.component.pug'
 })
 export class NoContentComponent {
 

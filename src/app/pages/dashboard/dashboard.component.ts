@@ -2,8 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'dashboard',
-  encapsulation: ViewEncapsulation.None,
-  template: require('./dashboard.component.pug')
+  encapsulation: ViewEncapsulation.Emulated,
+  templateUrl: './dashboard.component.pug'
 })
 export class DashboardComponent {
 

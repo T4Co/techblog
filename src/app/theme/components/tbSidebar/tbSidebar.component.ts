@@ -1,16 +1,16 @@
-import { Component, ElementRef, HostListener, ViewEncapsulation } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewEncapsulation} from '@angular/core';
 import { GlobalState } from '../../../global.state';
 import { layoutSizes } from '../../../theme';
-import { MENU } from '../../../../app/app.menu';
+import { MENU } from '../../../app.menu';
 import * as _ from 'lodash';
 
 @Component({
   selector: 'tb-sidebar',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./tbSidebar.component.scss')],
-  template: require('./tbSidebar.component.pug')
+  encapsulation: ViewEncapsulation.Emulated,
+  styleUrls: ['./tbSidebar.component.scss'],
+  templateUrl: './tbSidebar.component.pug'
 })
-export class TbSidebar {
+export class TbSidebar implements OnInit, AfterViewInit {
 
   // here we declare which routes we want to use as a menu in our sidebar
   // we're creating a deep copy since we are going to change that object
@@ -22,7 +22,6 @@ export class TbSidebar {
 
 
   constructor(private _elementRef: ElementRef, private _state: GlobalState) {
-
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });

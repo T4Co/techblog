@@ -1,11 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'pages',
-  encapsulation: ViewEncapsulation.None,
-  styles: [],
-  template: require('./page.component.pug'),
+  encapsulation: ViewEncapsulation.Emulated,
+  styleUrls: [],
+  templateUrl: './page.component.pug',
 })
-export class PagesComponent {
+export class PagesComponent implements OnInit {
 
   constructor() {
   }

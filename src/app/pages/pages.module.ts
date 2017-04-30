@@ -6,6 +6,9 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { routing } from './pages.routing';
 import { NgaModule } from '../theme/nga.module';
 
+// Angular Material module
+import { MaterialModule } from '../theme/material.module';
+
 import { PagesComponent } from './pages.component';
 import { LoginComponent } from './login/index';
 import { NoContentComponent } from './no-content/index';
@@ -16,7 +19,7 @@ import { AuthService } from '../services/index';
 import {
   PerfectScrollbarModule,
   PerfectScrollbarConfigInterface
-} from 'angular2-perfect-scrollbar';
+} from 'ngx-perfect-scrollbar';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -27,6 +30,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     FormsModule,
     NgaModule,
+    MaterialModule,
     routing,
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],

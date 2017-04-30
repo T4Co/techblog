@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TbThemeConfigProvider } from './theme.configProvider';
-import { colorHelper } from './theme.constants';
+import { ColorHelper } from './theme.constants';
 
 @Injectable()
 export class TbThemeConfig {
@@ -31,17 +31,17 @@ export class TbThemeConfig {
     //   warning: colorScheme.warning,
     //   danger: colorScheme.danger,
     //
-    //   primaryLight: colorHelper.tint(colorScheme.primary, 30),
-    //   infoLight: colorHelper.tint(colorScheme.info, 30),
-    //   successLight: colorHelper.tint(colorScheme.success, 30),
-    //   warningLight: colorHelper.tint(colorScheme.warning, 30),
-    //   dangerLight: colorHelper.tint(colorScheme.danger, 30),
+    //   primaryLight: ColorHelper.tint(colorScheme.primary, 30),
+    //   infoLight: ColorHelper.tint(colorScheme.info, 30),
+    //   successLight: ColorHelper.tint(colorScheme.success, 30),
+    //   warningLight: ColorHelper.tint(colorScheme.warning, 30),
+    //   dangerLight: ColorHelper.tint(colorScheme.danger, 30),
     //
-    //   primaryDark: colorHelper.shade(colorScheme.primary, 15),
-    //   infoDark: colorHelper.shade(colorScheme.info, 15),
-    //   successDark: colorHelper.shade(colorScheme.success, 15),
-    //   warningDark: colorHelper.shade(colorScheme.warning, 15),
-    //   dangerDark: colorHelper.shade(colorScheme.danger, 15),
+    //   primaryDark: ColorHelper.shade(colorScheme.primary, 15),
+    //   infoDark: ColorHelper.shade(colorScheme.info, 15),
+    //   successDark: ColorHelper.shade(colorScheme.success, 15),
+    //   warningDark: ColorHelper.shade(colorScheme.warning, 15),
+    //   dangerDark: ColorHelper.shade(colorScheme.danger, 15),
     //
     //   dashboard: {
     //     blueStone: '#005562',

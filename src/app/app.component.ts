@@ -11,14 +11,9 @@ import { TbThemeConfig } from './theme/theme.config';
  */
 @Component({
   selector: 'app',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./app.component.scss')],
-  template: `
-    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" tbThemeRun>
-      <div class="additional-bg"></div>
-      <router-outlet></router-outlet>
-    </main>
-  `
+  encapsulation: ViewEncapsulation.Emulated, // TODO: studying
+  styleUrls: ['./app.component.scss'],
+  templateUrl: './app.component.pug'
 })
 export class App {
 

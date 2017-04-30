@@ -1,15 +1,12 @@
-import { NgModule, ModuleWithProviders }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { TbThemeConfig } from './theme.config';
 import { TbThemeConfigProvider } from './theme.configProvider';
 
-import {
-  PerfectScrollbarModule,
-  PerfectScrollbarConfigInterface
-} from 'angular2-perfect-scrollbar';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 import {
   TbMenuItem,

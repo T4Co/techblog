@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import {Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit, OnDestroy} from '@angular/core';
 import { Router, Routes, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
@@ -7,12 +7,12 @@ import { GlobalState } from '../../../global.state';
 
 @Component({
   selector: 'tb-menu',
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./tbMenu.component.scss')],
-  template: require('./tbMenu.component.pug'),
+  encapsulation: ViewEncapsulation.Emulated,
+  styleUrls: ['./tbMenu.component.scss'],
+  templateUrl: './tbMenu.component.pug',
   providers: [TbMenuService]
 })
-export class TbMenu {
+export class TbMenu implements OnInit, OnDestroy {
 
   @Input() menuRoutes: Routes = [];
   @Input() sidebarCollapsed: boolean = false;

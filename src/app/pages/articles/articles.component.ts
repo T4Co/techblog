@@ -2,8 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'articles',
-  encapsulation: ViewEncapsulation.None,
-  template: require('./articles.component.pug'),
+  encapsulation: ViewEncapsulation.Emulated,
+  templateUrl: './articles.component.pug'
 })
 export class ArticlesComponent {
 

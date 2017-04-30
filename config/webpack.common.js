@@ -10,7 +10,6 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -59,7 +58,7 @@ module.exports = function (options) {
       'vendor_angular': './src/vendor-angular.browser.ts',
       'vendor_common': './src/vendor-common.browser.ts',
       'main': './src/main.browser.ts'
-      
+
     },
 
     /*
@@ -111,7 +110,7 @@ module.exports = function (options) {
           test: /\.ts$/,
           use: [
             '@angularclass/hmr-loader?pretty=' + !isProd + '&prod=' + isProd,
-            'awesome-typescript-loader',
+            'ts-loader',
             'angular2-template-loader',
             'angular2-router-loader'
           ],
@@ -187,9 +186,9 @@ module.exports = function (options) {
 
         /* Pug support
          */
-        { 
-          test: /\.(pug|jade)$/, 
-          loader: 'pug-html-loader' 
+        {
+          test: /\.(pug|jade)$/,
+          loader: ['raw-loader', 'pug-html-loader']
         }
       ]
     },
@@ -212,13 +211,6 @@ module.exports = function (options) {
         prettyPrint: true
       }),
 
-      /*
-       * Plugin: ForkCheckerPlugin
-       * Description: Do type checking in a separate process, so webpack don't need to wait.
-       *
-       * See: https://github.com/s-panferov/awesome-typescript-loader#forkchecker-boolean-defaultfalse
-       */
-      new ForkCheckerPlugin(),
       /*
        * Plugin: CommonsChunkPlugin
        * Description: Shares common code between the pages.
